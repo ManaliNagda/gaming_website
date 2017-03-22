@@ -1,0 +1,74 @@
+<html>
+	<head></head>
+	<script>
+		function randomize(min, max) {
+			if (!min)
+				min = 0;
+			if (!max)
+				max = 1;
+			return Math.floor(Math.random()*(max)+min);
+		}
+		function randomBg() {
+		var bgs = new Array();
+		bgs.push("background1.jpg");
+		bgs.push("background2.jpg");
+		bgs.push("background3.jpg");
+		bgs.push("background4.jpg");
+		document.body.style.backgroundImage = "url(" + bgs[randomize(0, bgs.length)] + ")";
+		}
+	</script>
+<body onload="randomBg()" style="background-repeat: no-repeat;background-color: black; background-size:100% 100%">
+
+	<a id="top"></a>
+	<center>
+		
+		<div style="background-image: url(midframe.jpg); height: 1000px; width: 800px; border: 1px solid black;">
+		<header>
+		<!--Begin Logo-->
+		
+				<h1><a href="home.html"><img src="logo.png" alt="boom games logo" /></a></h1>
+
+			
+		</header>
+
+		<!--End Logo-->
+	
+	<font size="5" style="color:grey">
+		<!--Start Navigation-->
+	<nav>
+			
+	<a href="home.html"><font style="color:#484848">Home</a> |
+	<a href="gameslist.html"><font style="color:#484848">Games List</a> |
+	<a href="signin.html"><font style="color:#484848">Sign In</a> |
+	<a href="register.html"><font style="color:#484848">Register</a> |
+	<a href="about.html"><font style="color:#484848">About Us</a> |
+		</nav>
+	</font>
+		<!--End Navigation-->
+	<font style="color:grey">
+     	<hr>
+	</font>
+	<br><br><br><br>
+	 <form action="dm.php" method="post">
+			<table>
+				
+				<tr>
+					<td><b><font style="color:#d1d1d1 ">Username : </td>
+					<td><input type="text" style="color:grey" name="username" value="@boomgames.net" onfocus = " this.style.color='black' ; if(this.value=='@boomgames.net') this.value='';"></td>
+				</tr>
+				<tr></tr><tr></tr><tr></tr><tr></tr>
+				<tr>
+					<td><b><font style="color:#d1d1d1 ">Password : </td>
+					<td><input type="password" name="password"></td>
+				</tr>
+				<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+				<tr>
+					<td></td>
+					<td>
+					<input type="submit" name="submit">
+					</td>
+				</tr>
+			</table>
+		</form>	
+	</body>
+</html>

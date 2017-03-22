@@ -1,0 +1,169 @@
+<html>
+	<head>
+	<script type="text/javascript">
+		function valid()
+		{
+			var x=document.forms["f1"]["fname"].value;
+			if(x=="")
+			{
+				alert("Enter you first name");
+				return false;
+			}
+			x=document.forms["f1"]["lname"].value;
+			if(x=="")
+			{
+				alert("Enter you last name");
+				return false;
+			}
+			x=document.forms["f1"]["username"].value;
+			if(x=="")
+			{
+				alert("Enter your username");
+				return false;
+			}
+			x=document.forms["f1"]["pass"].value;
+			y=document.forms["f1"]["passc"].value;
+			if(x.length<8)
+			{
+				alert("Password must be 8 letters long");
+				return false;
+			}
+			else
+			{
+				if(x!=y)
+				{
+					alert("Passwords do not match!!!")
+					return false;
+				}
+			}
+		}
+		
+		function randomize(min, max) {
+			if (!min)
+				min = 0;
+			if (!max)
+				max = 1;
+			return Math.floor(Math.random()*(max)+min);
+		}
+		function randomBg() {
+		var bgs = new Array();
+		bgs.push("background1.jpg");
+		bgs.push("background2.jpg");
+		bgs.push("background3.jpg");
+		bgs.push("background4.jpg");
+		document.body.style.backgroundImage = "url(" + bgs[randomize(0, bgs.length)] + ")";
+		}
+		function disp()
+		{
+			var x=document.forms["f1"]["pass"].value;
+			var y =document.getElementById("pass");
+			if(x.length<8)
+			{
+				y.style.visibility="visible";
+			}
+			else
+			{
+				y.style.visibility="hidden";
+				
+			}
+		} 
+		function overuser()
+		{
+			var z =document.getElementById("userinfo");
+			z.style.visibility="visible";
+		}
+		function nav(a)
+		{
+			var nav = document.getElementById("a");
+			nav.style.fontSize="larger";
+		}
+
+	</script>
+	</head>
+
+<body onload="randomBg()" style="background-repeat: no-repeat;background-color: black ; background-size:100% 100%">
+
+	<a id="top"></a>
+	<center>
+		
+		<div style="background-image: url(midframe.jpg); height: 1000px; width: 800px; border: 1px solid black;">
+		<header>
+		<!--Begin Logo-->
+		
+				<h1><a href="home.html"><img src="logo.png" alt="boom games logo" /></a></h1>
+
+			
+		</header>
+
+		<!--End Logo-->
+	
+	<font size="5" style="color:grey">
+		<!--Start Navigation-->
+	<nav>
+			
+	<a id ="home" href="home.html"><font style="color:#484848" onmouseover="nav('home')">Home</a> |
+	<a id ="list" href="gameslist.html"><font style="color:#484848">Games List</a> |
+	<a id ="signin" href="signin.html"><font style="color:#484848">Sign In</a> |
+	<a id ="register" href="register.html"><font style="color:#484848">Register</a> |
+	<a id ="about" href="about.html"><font style="color:#484848">About Us</a> |
+		</nav>
+	</font>
+		<!--End Navigation-->
+	<font style="color:grey">
+     	<hr>
+	</font>
+	<h2><b><font style="color:#484848 ">Create your BoomGames Account
+	<br>Its free and will always be. <br></b></h2>	
+	<br>
+	<form name="f1" onsubmit="return valid();">
+			<table>
+				<tr>
+					<td><b><font style="color:#d1d1d1 " >Name: </td>
+					<td><input type="text" style="color:grey" name ="fname" value="First" onfocus = "this.style.color='black' ; if(this.value=='First') this.value='';"></td>
+					<td><input type="text" style="color:grey" name ="lname" value="Last" onfocus = " this.style.color='black' ; if(this.value=='Last') this.value='';"></td>
+				</tr>
+				<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+				<tr>
+					<td><b><font style="color:#d1d1d1 ">Choose a username : </td>
+					<td><input type="text" style="color:grey" name="username" value="@boomgames.net"  onfocus = " this.style.color='black' ; if(this.value=='@boomgames.net') this.value='';"></td>
+					<td onclick="overuser()"><p style="color:red" >[?]</p></td>
+					<td><p id="userinfo" style="visibility:hidden">This field displays your login name</p></td>
+					
+				</tr>
+				<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+				<tr>
+					<td><b><font style="color:#d1d1d1 ">Create a password : </td>
+					<td><input type="password" name="pass" onkeyup="disp()"></td>
+					<td><p id="pass" style="visibility:hidden; color:red">Password length should be minimum 8</p></td>
+				</tr>
+				<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+				<tr>
+					<td><b><font style="color:#d1d1d1 ">Confirm a password : </td>
+					<td><input type="password" name="passc"></td>
+				</tr>
+				<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+				<tr>
+					<td><b><font style="color:#d1d1d1 ">Birthday : </td>
+					<td><input type="date" name="bday"</td>
+				</tr>
+				<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+				<tr>
+					<td><b><font style="color:#d1d1d1 ">Gender : </td>
+					<td>
+						<select name="gender" >
+							<option value="m"><font style="color:#d1d1d1 ">Male</option>
+							<option value="f"><font style="color:#d1d1d1 ">Female</option>
+							<option value="o"><font style="color:#d1d1d1 ">Other</option>
+						</select>
+					</td>
+				</tr>
+				<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+				<tr>
+					<td>
+					<input type="submit" name="submit">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

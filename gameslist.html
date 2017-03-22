@@ -1,0 +1,64 @@
+<html>
+	<head></head>
+	<script>
+		function randomize(min, max) {
+			if (!min)
+				min = 0;
+			if (!max)
+				max = 1;
+			return Math.floor(Math.random()*(max)+min);
+		}
+		function randomBg() {
+		var bgs = new Array();
+		bgs.push("background1.jpg");
+		bgs.push("background2.jpg");
+		bgs.push("background3.jpg");
+		bgs.push("background4.jpg");
+		document.body.style.backgroundImage = "url(" + bgs[randomize(0, bgs.length)] + ")";
+		}
+	</script>
+<body onload="randomBg()" style="background-repeat: no-repeat;background-color: black; background-size:100% 100%">
+
+	<a id="top"></a>
+	<center>
+		
+		<div style="background-image: url(midframe.jpg); height: 1000px; width: 800px; border: 1px solid black;">
+		<header>
+		<!--Begin Logo-->
+		
+				<h1><a href="home.html"><img src="logo.png" alt="boom games logo" /></a></h1>
+
+			
+		</header>
+
+		<!--End Logo-->
+	
+	<font size="5" style="color:grey">
+		<!--Start Navigation-->
+	<nav>
+			
+	<a href="home.html"><font style="color:#484848">Home</a> |
+	<a href="gameslist.html"><font style="color:#484848">Games List</a> |
+	<a href="signin.html"><font style="color:#484848">Sign In</a> |
+	<a href="register.html"><font style="color:#484848">Register</a> |
+	<a href="about.html"><font style="color:#484848">About Us</a> |
+		</nav>
+	</font>
+		<!--End Navigation-->
+	<font style="color:grey">
+     	<hr>
+	</font>
+	 
+	<!--List Starts-->
+	<h2> List of Games </h2>
+	<ul style="list-style:square; margin:2px 2px 0 15px">
+		<li style="padding:0 0 2px 0"><a href="pes15.html"><font style="color:#d1d1d1 " size="4">Pro Evolution Soccer 2015-RELOADED + LANGUAGE PACKS</font></a></li>
+		<li><a href="watchdogs.html"><font style="color:#d1d1d1 " size="4">Watch Dogs- REALOADED</font></a></li>
+		<li><a href="resevil.html"><font style="color:#d1d1d1 " size="4">Resident Evil HD REMASTER-CODEX</font></a></li>
+	</ul>
+
+	<br><br><br><br><br><br><br><br><br><br><br>
+	<a href="#top"><font style="color:grey">Go to top</font></a>
+	
+	</body>
+</html>
